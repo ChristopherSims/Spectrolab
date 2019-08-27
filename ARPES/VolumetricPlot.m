@@ -14,13 +14,13 @@ ylabel('K_x')
 xlabel('Energy')
 zlabel('K_y')
 
-xticks(Energy_Contour(end:-1:1) - 70)
-a = ["","","","","",""];
-for ii = 1:length(Energy_Contour)
- a(ii) = strcat(num2str((round(abs(eV(Energy_Contour(ii)) - eV(ypos)),1)*1.0)),' eV');
-end
-a(1) = "0 eV";
-xticklabels(a)
+% xticks(Energy_Contour(end:-1:1) - 70)
+% a = ["","","","","",""];
+% for ii = 1:length(Energy_Contour)
+%  a(ii) = strcat(num2str((round(abs(eV(Energy_Contour(ii)) - eV(ypos)),1)*1.0)),' eV');
+% end
+% a(1) = "0 eV";
+% xticklabels(a)
 xlabel(strcat('Energy'),'FontSize',14)
 %%%%%%%%%%%%%%%%%%5
 %Y label 

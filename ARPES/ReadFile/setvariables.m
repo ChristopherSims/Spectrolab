@@ -12,5 +12,4 @@ Xlim = size(B,1); Ylim = size(B,2); Zlim = size(B,3);
 zpos = round(Zlim/2); %Angle 1
 xpos = round(Xlim/2); %Angle 2
 eV =  Dy*(1:size(B,2)) + Ymin;
-setmap = flipud(cold);
 Fermi_Level = abs(Ymin) + ((ypos/Ylim)*(abs(Ymax) - abs(Ymin)));

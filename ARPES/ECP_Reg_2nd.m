@@ -10,7 +10,7 @@ vertical_space = 0.02;
 %aspect = 1;
 figure('Name',"Constant Energy Contour Plot");
 set(gcf, 'Visible', 'on');
-Energy_Limit = 200;
+Energy_Limit = ypos;
 Energy_Cut = 1:int16(Energy_Limit/6):Energy_Limit;
 Energy_Contour = ypos - Energy_Cut;
 hold on
@@ -51,11 +51,12 @@ for ii = 2:6
 subaxis(2,6,6+ii,'sv',vertical_space,'sh',0.01); 
 f = squeeze(B(:,Energy_Contour(ii),:))';
 h_Sobel = fspecial ('sobel');
-imfilter( double(f) , h_Sobel , 'replicate');
+f_y = imfilter( double(f) , h_Sobel , 'replicate');
 contourplot(f_y,rotate)
 axis on
-%set(gca,'xtick',[])
+set(gca,'xtick',[])
 set(gca,'ytick',[])
+xlabel(strcat('k_y','(1/',Ang,')'),'FontSize',18,'color','k')
 % text(-0.9,70,...
 %     strcat('-',num2str(round(round(abs(eV(Energy_Contour(ii)) - eV(ypos))*1000.0)...
 %     /100)*100),'meV') ...

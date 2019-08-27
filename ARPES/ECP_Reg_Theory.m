@@ -5,7 +5,7 @@ offsetx = 0.25;
 offsety = 0;
 figure('Name',"Constant Energy Contour Plot");
 set(gcf, 'Visible', 'on');
-Energy_Limit = ypos - 200;
+Energy_Limit = ypos;
 Energy_Cut = 1:int16(Energy_Limit/6):Energy_Limit;
 Energy_Contour = ypos - Energy_Cut;
 hold on
