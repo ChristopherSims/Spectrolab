@@ -1,0 +1,38 @@
+%KX Cuts
+figure('Name','K_X Cut Plots','Position', get(0, 'Screensize'));
+set(gcf, 'Visible', 'on');
+Kx_Cuts = double(int16(1:Xlim/5:Xlim));
+subaxis(1,6,1,'S',0.01); 
+% f = squeeze(B(:,ypos,:))';
+% f = imresize(f,5);
+imshow(squeeze(B(:,:,ypos))',[], 'XData', [KX_Angle_Min KX_Angle_Max]...
+    , 'YData', [KY_Angle_Min KY_Angle_Max], 'colormap', setmap);
+%colorbar;
+hold on
+for ii = 1:5
+DKY = (KY_Angle_Max - KY_Angle_Min)*(Kx_Cuts(ii)/Zlim) + KY_Angle_Min;
+line([KX_Angle_Min KX_Angle_Max],[DKY DKY], 'color', 'white', 'linewidth',1,'linestyle','--')
+text(KX_Angle_Min,DKY + 0.1,num2str(ii),'color','White','FontSize',12, 'FontWeight','bold')
+end
+axis on
+axis square
+xlabel(strcat('K_x','(1/',Ang,')'),'FontSize',20)
+ylabel(strcat('K_y','(1/',Ang,')'),'FontSize',20)
+hold off
+for ii = 2:6
+subaxis(1,6,ii,'S',0.01); 
+f = squeeze(B(Kx_Cuts(ii-1),:,:));
+f = imresize(f,5);
+imshow(f',[], 'XData', ...
+    [KX_Angle_Min KX_Angle_Max], 'YData',...
+    [abs(Ymin) - Fermi_Level, abs(Ymax)- Fermi_Level], 'colormap', setmap);
+axis off
+axis square
+text(KX_Angle_Min+0.1,-0.1,...
+    strcat('cut', num2str(ii-1)) ...
+ ,'color','Black','BackgroundColor','White','FontSize',12, 'FontWeight','bold')
+xlabel(strcat('K_x','(1/',Ang,')'),'FontSize',20)
+set(gca,'fontsize',20)
+hold off
+end
+%saveas(gcf,strcat(dir,sample,'_',file_no,'_Kx_Cuts.png'))
