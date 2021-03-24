@@ -1,6 +1,6 @@
 # Spectrolab
 
-No longer in active delopment, unless there is a large interest to develop this tool further.
+No longer in active delopment.
 
 Fork on github to create your own adaptation of this tool
 
