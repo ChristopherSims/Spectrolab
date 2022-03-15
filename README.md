@@ -8,7 +8,7 @@ Fork on github to create your own adaptation of this tool
 
 NOTE: This is released under the MIT license
 
-Please cite () if you use this code or any of its features
+Please cite (https://arxiv.org/abs/2203.06821) if you use this code or any of its features
 
 Please post issues if you have any
 
