@@ -12,7 +12,7 @@ Please cite (https://arxiv.org/abs/2203.06821) if you use this code or any of it
 
 Please post issues if you have any
 
-email: Christopherssims95 "at" gmail.com
+
 
 
 
